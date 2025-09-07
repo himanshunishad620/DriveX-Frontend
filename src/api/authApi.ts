@@ -3,7 +3,7 @@ import {createApi} from "@reduxjs/toolkit/query/react"
 import type { RegisterApi } from "../types/HookProps"
 export const authApi=createApi({
   reducerPath:"authApi",
-  baseQuery:fetchBaseQuery({baseUrl:"http://localhost:4000/api/auth/",
+  baseQuery:fetchBaseQuery({baseUrl:"https://backend-u36p.onrender.com/api/auth/",
       credentials: "include", 
   }),
   endpoints:(builder)=>({

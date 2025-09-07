@@ -43,7 +43,7 @@ const useFileUpload = () => {
       setFileUploadingArray((pre) => [...pre, newFile]);
 
       await axios.post<{ url: string }>(
-        "http://localhost:4000/api/file/upload",
+        "https://backend-u36p.onrender.com/api/file/upload",
         formData,
         {
           withCredentials: true,

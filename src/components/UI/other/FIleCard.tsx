@@ -10,7 +10,7 @@ import { formatToMBorGB } from "../../../helper/helperMethod";
 import FileIcon from "../reusable/FileIcon";
 
 const FileCard: React.FC<FileData> = (props) => {
-  const downloadUrl = `http://localhost:4000/api/file/download?url=${props.downloadUrl}&fileName=${props.name}`;
+  const downloadUrl = `https://backend-u36p.onrender.com/api/file/download?url=${props.downloadUrl}&fileName=${props.name}`;
   const deleteUrl = `deleteFIle?size=${props.size}&type=${props.fileType}&_id=${props._id}&public_id=${props.publicId}&fileName=${props.name}`;
   const [showOptionsToggle, setShowOptionsToggle] = useState<boolean>(false);
   const [deletePopUpToggle, setDeletePopUpToggle] = useState<boolean>(false);
