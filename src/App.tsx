@@ -32,23 +32,23 @@ const App: React.FC = () => {
       window.removeEventListener("offline", handleOfflineToggle);
     };
   });
-  // if (!isOnline)
-  // return (
-  //   <>
-  //     <DotLottieReact
-  //       className="h-120 w-full"
-  //       src="/offline.lottie"
-  //       loop
-  //       autoplay
-  //     />
-  //     <p className="mt-[-80px] text-center text-2xl font-bold text-gray-500 md:text-3xl">
-  //       No Internet Connection
-  //     </p>
-  //     <p className="text-center text-lg font-normal text-gray-500 md:text-lg">
-  //       Please make sure that you have stable internet connection
-  //     </p>
-  //   </>
-  // );
+  if (!isOnline)
+    return (
+      <>
+        <DotLottieReact
+          className="h-120 w-full"
+          src="/offline.lottie"
+          loop
+          autoplay
+        />
+        <p className="mt-[-80px] text-center text-2xl font-bold text-gray-500 md:text-3xl">
+          No Internet Connection
+        </p>
+        <p className="text-center text-lg font-normal text-gray-500 md:text-lg">
+          Please make sure that you have stable internet connection
+        </p>
+      </>
+    );
   return (
     <div className="h-[100dvh] w-screen">
       <Routes>
