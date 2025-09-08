@@ -9,9 +9,9 @@ const AboutMe: React.FC = () => {
         About Me
       </h1>
       <div className="flex w-full flex-col gap-4 p-1 md:flex-row md:p-5">
-        <div className="flex w-full items-center justify-center md:w-1/2">
+        <div className="flex w-full items-center justify-center p-8 md:w-1/2 md:p-0">
           <img
-            className="shadow-blue w-full rounded-full border-3 border-blue-500 md:w-3/7"
+            className="shadow-blue w-full rounded-full border-8 border-blue-500 md:w-3/7"
             src={illustration}
             alt=""
           />
@@ -24,7 +24,7 @@ const AboutMe: React.FC = () => {
           <p className="text-xl font-semibold text-gray-500 md:text-2xl">
             Aspiring MERN Stack Developer
           </p>
-          <i className="my-2 text-[12px] font-semibold text-gray-600">
+          <i className="my-2 text-[12px] font-medium text-gray-500">
             I’m Himanshu Nishad, a passionate frontend developer who loves
             building clean, user-friendly, and impactful web applications. I
             enjoy turning ideas into real products using modern technologies
