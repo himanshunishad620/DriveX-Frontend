@@ -40,7 +40,7 @@ const ShareFilePopUp: React.FC<Props> = (props) => {
         </p>
         <div className="flex w-full justify-evenly">
           <a
-            href={`https://www.facebook.com/sharer/sharer.php?u=${props.url}`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(props.url)}`}
             target="_blank"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100"
           >
@@ -54,14 +54,14 @@ const ShareFilePopUp: React.FC<Props> = (props) => {
             <FaWhatsapp className="text-xl text-green-500" />
           </a>
           <a
-            href={`https://t.me/share/url?url=${props.url}&text=Check%20this%20out!`}
+            href={`https://t.me/share/url?url=${encodeURIComponent(props.url)}&text=Check%20this%20out!`}
             target="_blank"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100"
           >
             <FaTelegramPlane className="text-xl text-blue-500" />
           </a>
           <a
-            href={`https://twitter.com/intent/tweet?url=${props.url}&text=Check%20this%20out!`}
+            href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(props.url)}&text=Check%20this%20out!`}
             target="_blank"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-blue-100"
           >
