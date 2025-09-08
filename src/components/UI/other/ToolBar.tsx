@@ -19,7 +19,7 @@ type Props = {
 };
 
 const ToolBar: React.FC<Props> = (props) => {
-  const [selectedIndex, setSelectedIndex] = useState<number>(0);
+  // const [selectedIndex, setSelectedIndex] = useState<number>(0);
   const [selectedValue, setSelectedValue] = useState<string>("name");
   const [flagToReSort, setFlagToReSort] = useState<number>();
   const [sortDirectionToggle, setSortDirectionToggle] =
@@ -70,7 +70,7 @@ const ToolBar: React.FC<Props> = (props) => {
   }, [sortDirectionToggle, flagToReSort, selectedValue, props.setList]);
 
   const handleSelect = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedIndex(e.target.selectedIndex);
+    // setSelectedIndex(e.target.selectedIndex);
     setSelectedValue(e.target.value);
   };
 
@@ -130,7 +130,7 @@ const ToolBar: React.FC<Props> = (props) => {
             Date Created
           </option>
         </select>
-        {SortButtonArray[selectedIndex]}
+        {/* {SortButtonArray[selectedIndex]} */}
       </div>
     </div>
   );

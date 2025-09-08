@@ -47,7 +47,7 @@ const ShareFilePopUp: React.FC<Props> = (props) => {
             <CgFacebook className="text-xl text-blue-500" />
           </a>
           <a
-            href={`https://wa.me/?text=${props.url}`}
+            href={`https://wa.me/?text=${encodeURIComponent(props.url)}`}
             target="_blank"
             className="flex h-9 w-9 items-center justify-center rounded-full bg-green-100"
           >
