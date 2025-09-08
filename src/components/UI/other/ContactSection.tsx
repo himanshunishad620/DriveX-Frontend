@@ -9,6 +9,7 @@ import { FaLinkedinIn } from "react-icons/fa";
 import { FiGithub } from "react-icons/fi";
 import { MdLocalPhone, MdOutlineEmail } from "react-icons/md";
 import type { IconType } from "react-icons";
+import { RiLinkM } from "react-icons/ri";
 
 const ContactSection: React.FC = () => {
   const { values, handleChange } = useFormHook({
@@ -134,15 +135,16 @@ const LinkedText: React.FC<Props> = (props) => {
       </a>
 
       <div>
-        <p className="text-md mb-[-6px] font-medium text-blue-600">
+        <p className="text-md mb-[-6px] font-semibold text-blue-500">
           {props.subTitle}
         </p>
         <a
           target="_blank"
-          className="text-sm font-medium text-gray-500"
+          className="flex items-center text-sm font-medium text-gray-500"
           href={props.link}
         >
           {/* <p > */}
+          <RiLinkM className="text-lg" />
           {props.description}
           {/* </p> */}
         </a>

@@ -14,7 +14,7 @@ type Props = {
 
 const ShareFilePopUp: React.FC<Props> = (props) => {
   const [copied, setCopied] = useState<boolean>(false);
-
+  console.log(props.url);
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(props.url);

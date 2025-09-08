@@ -5,6 +5,7 @@ import FeaturesSection from "../components/UI/other/FeaturesSection";
 import HowToUse from "../components/UI/other/HowToUse";
 import ContactSection from "../components/UI/other/ContactSection";
 import Footer from "../components/UI/other/Footer";
+import AboutMe from "../components/UI/other/AboutMe";
 
 const LandingPage: React.FC = () => {
   return (
@@ -13,6 +14,7 @@ const LandingPage: React.FC = () => {
       <Banner />
       <HowToUse />
       <FeaturesSection />
+      <AboutMe />
       <ContactSection />
       <Footer />
     </div>
