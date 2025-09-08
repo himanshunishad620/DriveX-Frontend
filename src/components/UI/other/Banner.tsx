@@ -1,8 +1,14 @@
 import React from "react";
 import Button from "../reusable/Button";
-import { BiX } from "react-icons/bi";
+import { TbLayoutDashboardFilled } from "react-icons/tb";
+import { useNavigate } from "react-router-dom";
+import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const Banner: React.FC = () => {
+  const navigate = useNavigate();
+  const handleClick = () => {
+    navigate("./dashboard");
+  };
   return (
     <section className="flex w-full flex-col bg-blue-50 p-5 md:flex-row md:p-10">
       <div className="w-full p-1 md:w-3/5 md:p-5">
@@ -21,9 +27,21 @@ const Banner: React.FC = () => {
           Sync across devices, share with precision, and keep full control of
           you data.
         </p>
-        <Button label="Dashboard" icon={BiX} size="md" />
+        <Button
+          onClick={handleClick}
+          label="Dashboard"
+          icon={TbLayoutDashboardFilled}
+          size="md"
+        />
       </div>
-      <div className="hidden w-full bg-red-200 p-5 md:block md:w-2/5">d</div>
+      <div className="block w-full p-5 md:block md:w-2/5">
+        <DotLottieReact
+          className="h-120 w-full scale-x-[-1] transform"
+          src="/landingpageanimation.lottie"
+          loop
+          autoplay
+        />
+      </div>
     </section>
   );
 };

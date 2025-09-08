@@ -13,42 +13,42 @@ import NotFound from "./components/other/NotFound";
 import { FileUploadProvider } from "./context/FileUploadProvider";
 import { ToastContainer } from "react-toastify";
 import LandingPage from "./pages/LandingPage";
-import { useEffect, useState } from "react";
-import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+// import { useEffect, useState } from "react";
+// import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
 const App: React.FC = () => {
-  const [isOnline, setIsOnline] = useState<boolean>(window.navigator.onLine);
-  useEffect(() => {
-    const handleOnlineToggle = () => {
-      setIsOnline(true);
-    };
-    const handleOfflineToggle = () => {
-      setIsOnline(false);
-    };
-    window.addEventListener("online", handleOnlineToggle);
-    window.addEventListener("offline", handleOfflineToggle);
-    return () => {
-      window.removeEventListener("online", handleOnlineToggle);
-      window.removeEventListener("offline", handleOfflineToggle);
-    };
-  });
-  if (!isOnline)
-    return (
-      <>
-        <DotLottieReact
-          className="h-120 w-full"
-          src="/offline.lottie"
-          loop
-          autoplay
-        />
-        <p className="mt-[-80px] text-center text-2xl font-bold text-gray-500 md:text-3xl">
-          No Internet Connection
-        </p>
-        <p className="text-center text-lg font-normal text-gray-500 md:text-lg">
-          Please make sure that you have stable internet connection
-        </p>
-      </>
-    );
+  // const [isOnline, setIsOnline] = useState<boolean>(window.navigator.onLine);
+  // useEffect(() => {
+  //   const handleOnlineToggle = () => {
+  //     setIsOnline(true);
+  //   };
+  //   const handleOfflineToggle = () => {
+  //     setIsOnline(false);
+  //   };
+  //   window.addEventListener("online", handleOnlineToggle);
+  //   window.addEventListener("offline", handleOfflineToggle);
+  //   return () => {
+  //     window.removeEventListener("online", handleOnlineToggle);
+  //     window.removeEventListener("offline", handleOfflineToggle);
+  //   };
+  // });
+  // if (!isOnline)
+  //   return (
+  //     <>
+  //       <DotLottieReact
+  //         className="h-120 w-full"
+  //         src="/offline.lottie"
+  //         loop
+  //         autoplay
+  //       />
+  //       <p className="mt-[-80px] text-center text-2xl font-bold text-gray-500 md:text-3xl">
+  //         No Internet Connection
+  //       </p>
+  //       <p className="text-center text-lg font-normal text-gray-500 md:text-lg">
+  //         Please make sure that you have stable internet connection
+  //       </p>
+  //     </>
+  //   );
   return (
     <div className="h-[100dvh] w-screen">
       <Routes>

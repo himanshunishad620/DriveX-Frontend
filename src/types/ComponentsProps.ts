@@ -114,6 +114,7 @@ export type IconButtonProps={
   icon:IconType;
   iconColor:string;
   onClick?:any;
+  bg?:boolean
 }
 
 export type GetClassName = (m: keyof Size, n: Size, o: string) => string;

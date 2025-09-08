@@ -3,6 +3,8 @@ import NavBar from "../components/UI/other/NavBar";
 import Banner from "../components/UI/other/Banner";
 import FeaturesSection from "../components/UI/other/FeaturesSection";
 import HowToUse from "../components/UI/other/HowToUse";
+import ContactSection from "../components/UI/other/ContactSection";
+import Footer from "../components/UI/other/Footer";
 
 const LandingPage: React.FC = () => {
   return (
@@ -11,6 +13,8 @@ const LandingPage: React.FC = () => {
       <Banner />
       <HowToUse />
       <FeaturesSection />
+      <ContactSection />
+      <Footer />
     </div>
   );
 };

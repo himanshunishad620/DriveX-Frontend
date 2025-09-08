@@ -9,7 +9,7 @@ const FeaturesSection: React.FC = () => {
         Features
       </h1>
       <div className="flex w-full flex-col gap-4 p-1 md:flex-row md:p-5">
-        <div className="h-full w-full rounded-xl bg-blue-50 p-5 md:w-1/3">
+        <div className="h-full w-full rounded-xl border-1 border-blue-500 bg-blue-50 p-5 md:w-1/3">
           <TbCloudUpload className="shadow-blue h-10 w-10 rounded-md border-1 border-blue-500 bg-blue-50 p-1 text-lg text-blue-500" />
           <p className="my-3 text-lg font-semibold text-gray-600">
             Fast upload and download
@@ -19,7 +19,7 @@ const FeaturesSection: React.FC = () => {
             no delays, no limits, just pure speed.
           </p>
         </div>
-        <div className="h-full w-full rounded-xl bg-blue-50 p-5 md:w-1/3">
+        <div className="h-full w-full rounded-xl border-1 border-blue-500 bg-blue-50 p-5 md:w-1/3">
           <SiEasyeda className="shadow-blue h-10 w-10 rounded-md border-1 border-blue-500 bg-blue-50 p-1 text-lg text-blue-500" />
           <p className="my-3 text-lg font-semibold text-gray-600">
             Easy to use
@@ -29,7 +29,7 @@ const FeaturesSection: React.FC = () => {
             effortless for everyone.
           </p>
         </div>
-        <div className="h-full w-full rounded-xl bg-blue-50 p-5 md:w-1/3">
+        <div className="h-full w-full rounded-xl border-1 border-blue-500 bg-blue-50 p-5 md:w-1/3">
           <RiSecurePaymentLine className="shadow-blue h-10 w-10 rounded-md border-1 border-blue-500 bg-blue-50 p-1 text-lg text-blue-500" />
           <p className="my-3 text-lg font-semibold text-gray-600">
             Secure & Reliable

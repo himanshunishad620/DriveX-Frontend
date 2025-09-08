@@ -9,17 +9,8 @@ export const fileApi=createApi({
                 getStorage:builder.query({
                         query:()=>"/getStorage",
                         providesTags: ["getStorage"],
-                        // transformResponse:(response:{result:{files:FileData[]}})=>{
-                        //         return response.result.files.sort((a,b)=>a.name.toLowerCase().localeCompare(b.name.toLowerCase()))
-                        // }
+                       
                 }),
-//                  transformResponse: (response: { result: { files: FileData[] } }) => {
-//         // ✅ Example: sort files by createdAt descending by default
-//         return response.result.files.sort(
-//           (a, b) => new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
-//         );
-//       },
-//     }),
                 deleteFile:builder.mutation({
                         query:(url:string)=>({
                                 url:url
