@@ -1,9 +1,10 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+const apiBaseUrl=import.meta.env.VITE_BASE_URL
 // import type { FileData } from "../types/ComponentsProps";
 
 export const fileApi=createApi({
         reducerPath:'fileApi',
-        baseQuery:fetchBaseQuery({baseUrl:'https://backend-u36p.onrender.com/api/file',credentials:'include'}),
+        baseQuery:fetchBaseQuery({baseUrl:apiBaseUrl+'/api/file',credentials:'include'}),
          tagTypes: ["getStorage"] as const,
         endpoints:(builder)=>({
                 getStorage:builder.query({

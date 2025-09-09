@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import { useAuthContext } from "../context/AuthProvider";
 import { useGetStorageQuery } from "../api/fileApi";
 import { useToast } from "./useToast";
+const apiBaseUrl = import.meta.env.VITE_BASE_URL;
 // import { useToast } from "./useToast";
 
 const useFileUpload = () => {
@@ -43,7 +44,7 @@ const useFileUpload = () => {
       setFileUploadingArray((pre) => [...pre, newFile]);
 
       await axios.post<{ url: string }>(
-        "https://backend-u36p.onrender.com/api/file/upload",
+        apiBaseUrl + "/api/file/upload",
         formData,
         {
           withCredentials: true,
