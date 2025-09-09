@@ -1,6 +1,5 @@
 import React from "react";
 import logo from "./../../../assets/Logo2.svg";
-// import { BiX } from "react-icons/bi";
 import Button from "../reusable/Button";
 import { RiLoginBoxLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";

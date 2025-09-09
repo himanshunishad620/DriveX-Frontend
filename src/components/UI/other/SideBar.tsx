@@ -1,7 +1,4 @@
 import React from "react";
-// import Button from "../reusable/Button";
-// import { useLogoutMutation } from "../../../api/authApi";
-// import { useAuthContext } from "../../../context/AuthProvider";
 import Logo from "./../../../assets/Logo2.svg";
 import Illustration from "./../../../assets/Illustration2.svg";
 import { MdDashboard } from "react-icons/md";

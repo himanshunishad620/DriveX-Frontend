@@ -6,7 +6,6 @@ import { useAuthContext } from "../context/AuthProvider";
 import { useGetStorageQuery } from "../api/fileApi";
 import { useToast } from "./useToast";
 const apiBaseUrl = import.meta.env.VITE_BASE_URL;
-// import { useToast } from "./useToast";
 
 const useFileUpload = () => {
   const { userId } = useAuthContext();
@@ -16,9 +15,6 @@ const useFileUpload = () => {
     [],
   );
   const uploadFile = async (file: File) => {
-    // if (!file) {
-    //   return showCustom(<p>File Not Found!</p>);
-    // }
     const controller = new AbortController();
     const id: string = uuidv4();
     const formData = new FormData();
@@ -68,9 +64,7 @@ const useFileUpload = () => {
       );
       refetch();
       showSuccess(`File Uploaded!`);
-      // console.log(res.data);
     } catch (err) {
-      console.error("Upload failed", err);
       showError("File Upload Failed!");
     } finally {
       setFileUploadingArray((pre) =>

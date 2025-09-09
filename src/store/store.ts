@@ -13,20 +13,3 @@ export const store=configureStore({
 })
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
-
-// import { configureStore } from "@reduxjs/toolkit";
-// import { api } from "../services/api"; // your RTK Query api slice
-
-// // Create store
-// export const store = configureStore({
-//   reducer: {
-//     // Add API slice reducer
-//     [api.reducerPath]: api.reducer,
-//   },
-//   middleware: (getDefaultMiddleware) =>
-//     getDefaultMiddleware().concat(api.middleware),
-// });
-
-// // Types for TypeScript
-// export type RootState = ReturnType<typeof store.getState>;
-// export type AppDispatch = typeof store.dispatch;

@@ -1,4 +1,3 @@
-// import type { ElementType } from "react";
 import { VscBlank } from "react-icons/vsc";
 import type {
   ButtonProps,

@@ -3,7 +3,6 @@ import { useGetStorageQuery } from "../../../api/fileApi";
 import ToolBar from "../../../components/UI/other/ToolBar";
 import type { FileData } from "../../../types/ComponentsProps";
 import FileContainer from "../../../components/UI/other/FileContainer";
-// import IconButton from "../../../components/UI/reusable/IconButton";
 import { IoMdArrowBack } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
 
@@ -52,43 +51,3 @@ const Images: React.FC = () => {
 };
 
 export default Images;
-// import { useEffect, useState } from "react";
-// import { useGetStorageQuery } from "../../../api/fileApi";
-// import ToolBar from "../../../components/UI/other/ToolBar";
-// import type { FileData } from "../../../types/ComponentsProps";
-// import FileContainer from "../../../components/UI/other/FileContainer";
-
-// const Images: React.FC = () => {
-//   const { data, isLoading } = useGetStorageQuery(null);
-//   const [list, setList] = useState<FileData[]>([]);
-//   const [rawList, setRawList] = useState<FileData[]>([]);
-
-//   useEffect(() => {
-//     const listItems = data?.result?.files;
-//     if (listItems) {
-//       const filtered = listItems.filter((i: any) => i.fileType === "image");
-//       const sortedList = filtered.sort((a: FileData, b: FileData) => {
-//         return a.name.toLowerCase().localeCompare(b.name.toLowerCase());
-//       });
-//       setList([...sortedList]);
-//       setRawList([...sortedList]);
-//     }
-//   }, [data, isLoading]);
-
-//   return (
-//     <div className="scrollbar-hide relative h-full w-full overflow-scroll px-10">
-//       <div className="sticky top-0 left-0 z-5 bg-gray-100 pb-3">
-//         <p className="py-5 text-3xl font-bold text-[#333F4E]">Medias</p>
-//         <ToolBar
-//           setList={setList}
-//           list={list}
-//           setRawList={setRawList}
-//           rawList={rawList}
-//         />
-//       </div>
-//       <FileContainer list={list} />
-//     </div>
-//   );
-// };
-
-// export default Images;

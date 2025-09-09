@@ -5,7 +5,6 @@ import { formatToMBorGB } from "../../../helper/helperMethod";
 
 const CategoryItems: React.FC<CategoryItemsProps> = (props) => {
   const Icon: IconType = props.icon;
-  // console.log(props.)
   return (
     <div className="flex h-full w-full flex-col justify-between rounded-xl bg-white p-3">
       {/* label */}

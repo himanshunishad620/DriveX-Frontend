@@ -15,12 +15,10 @@ const FileDeletePopUp: React.FC<Props> = (props) => {
   const { showSuccess, showError } = useToast();
   const handleDeleteFile = async () => {
     try {
-      const res = await deleteFile(props.deleteUrl);
+      await deleteFile(props.deleteUrl);
       showSuccess("File Deleted!");
-      console.log(res);
     } catch (error) {
       showError("Fail To Delete!");
-      console.log(error);
     } finally {
       props.handleDeletePopUpToggle();
     }
@@ -35,15 +33,12 @@ const FileDeletePopUp: React.FC<Props> = (props) => {
           This will permanently remove it from your storage.
         </p>
         <div className="flex justify-between gap-2">
-          {/* <div> */}
           <LightButton
             onClick={() => props.handleDeletePopUpToggle()}
             label="cancel"
             size="sm"
             icon={IoClose}
           />
-          {/* </div> */}
-          {/* <div className="shadow-blue"> */}
           <Button
             label="delete"
             parentWidth={false}
@@ -52,7 +47,6 @@ const FileDeletePopUp: React.FC<Props> = (props) => {
             onClick={handleDeleteFile}
             isLoading={isLoading}
           />
-          {/* </div> */}
         </div>
       </div>
     </div>

@@ -5,12 +5,10 @@ import TextInput from "../UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useRenameFileMutation } from "../../api/fileApi";
 import { useToast } from "../../hooks/useToast";
-// import { FaCut } from "react-icons/fa";
 import { IoClose } from "react-icons/io5";
 import { CgRename } from "react-icons/cg";
 
 type Props = {
-  //   renameUrl: string;
   _id: string;
   fileName: string;
   handleRenameFilePopUpToggle: () => void;
@@ -18,7 +16,6 @@ type Props = {
 
 const RenameFilePopUp: React.FC<Props> = (props) => {
   const { values, handleChange } = useFormHook({ newName: props.fileName });
-  //   console.log(props.fileName);
   const [renameFile, { isLoading }] = useRenameFileMutation();
   const { showSuccess, showError } = useToast();
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -31,10 +28,8 @@ const RenameFilePopUp: React.FC<Props> = (props) => {
       });
       showSuccess("File Renamed!");
       props.handleRenameFilePopUpToggle();
-      //       console.log(res);
     } catch (error) {
       showError("Failed To Rename!");
-      console.log(error);
     }
   };
   return (

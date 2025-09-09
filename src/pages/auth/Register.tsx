@@ -21,10 +21,6 @@ const Register: React.FC = () => {
     password: "",
     confirmPassword: "",
   });
-  //   email: "mane.aryan@malldrops.com",
-  //   password: "Himan@123",
-  //   confirmPassword: "Himan@123",
-  // });
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (values.confirmPassword.trim() !== values.password.trim()) {

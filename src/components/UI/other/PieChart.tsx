@@ -5,28 +5,25 @@ import { formatToMBorGBNumber } from "../../../helper/helperMethod";
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-// ✅ Strongly typed options
 const options: ChartOptions<"pie"> = {
   responsive: false,
   plugins: {
     legend: {
-      position: "right", // 👈 move legend to right
+      position: "right",
       labels: {
         color: "white",
         font: {
           size: 15,
-          weight: "bold", // 👈 makes legend text bold
+          weight: "bold",
         },
         usePointStyle: true,
         pointStyle: "circle",
       },
-      // display: false,
     },
   },
 };
 
 export default function PieChart(record: any) {
-  // console.log(record?.data.document.spaceTaken);
   const data = {
     labels: ["Documents", "Images", "Medias", "Others"],
     datasets: [
@@ -43,15 +40,6 @@ export default function PieChart(record: any) {
     ],
   };
   return (
-    // <div
-    // style={{
-    //   display: "flex",
-    //   width: "100%",
-    //   height: "80%",
-    //   backgroundColor: "red",
-    // }}
-    // className="flex h-1/2 w-1/2 items-center justify-center bg-amber-100"
-    // >
     <div className="flex h-full w-full flex-col justify-center">
       <div className="flex h-full w-full items-center justify-center">
         <Pie

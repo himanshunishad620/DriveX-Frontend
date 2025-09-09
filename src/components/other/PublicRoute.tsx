@@ -1,4 +1,3 @@
-// import { useAuthContext } from "../../context/AuthProvider";
 import { Navigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthProvider";
 import type { WrapperProps } from "../../types/ComponentsProps";

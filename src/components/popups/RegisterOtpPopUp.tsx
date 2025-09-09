@@ -14,9 +14,8 @@ const RegisterOtpPopUp: React.FC<RegisterPopupProps> = (props) => {
   const { showSuccess, showError } = useToast();
   const [register, { isLoading }] = useRegisterMutation();
   const navigate = useNavigate();
-  // console.log(props.email, props.password);
   const handleChange = (value: string) => {
-    setOtp(value); // save OTP in state
+    setOtp(value);
   };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -31,17 +30,8 @@ const RegisterOtpPopUp: React.FC<RegisterPopupProps> = (props) => {
       navigate("../");
     } catch (error) {
       showError("Invalid OTP!");
-      console.log(error);
     }
   };
-  // const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
-  //   e.preventDefault();
-  //   try {
-  //   } catch (error) {
-  //     console.error("Login failed:", error);
-  //   }
-  // };
-  // console.log(otp);
   return (
     <div className="fixed top-0 left-0 flex h-full w-full items-center justify-center bg-black/20">
       <form

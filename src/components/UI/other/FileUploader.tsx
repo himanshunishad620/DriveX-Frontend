@@ -10,10 +10,6 @@ import Button from "../reusable/Button";
 import LightButton from "../reusable/LightButton";
 import { useToast } from "../../../hooks/useToast";
 import { MdClose } from "react-icons/md";
-// import { useToast } from "../../../hooks/useToast";
-// import type { UploadFilePopUpProps } from "../../types/ComponentsProps";
-// import { useFileUploadContext } from "../../context/FileUploadProvider";
-// import { getFileSize } from "../../helper/helperMethod";
 
 const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
   const [file, setFile] = useState<File>();
@@ -34,7 +30,6 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
       return;
     }
     uploadFile(file);
-    //     props.setUploadFileToggle((pre) => !pre);
   };
   const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -42,10 +37,9 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
   };
   const handleDragOver = (e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
-    e.stopPropagation(); // Allow drop
+    e.stopPropagation();
   };
   return (
-    //     <div className="fixed top-0 left-0 z-11 flex h-screen w-screen items-center justify-center bg-black/40">
     <div className="h-78 w-90 bg-white p-5 md:w-100">
       <p className="text-center text-lg font-bold text-[#333F4E]">
         Upload File
@@ -65,11 +59,6 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
           <img className="h-20 w-20" src={UploadIcon} alt="" />
           <p className="text-sm text-gray-400">
             <span className="font-semibold text-gray-500">Browse File</span>
-
-            {/* or{" "}
-              <span className="font-semibold text-gray-500">
-                Drag & Drop File
-              </span> */}
           </p>
           <div className="h-4 w-9/10 overflow-hidden">
             {file && (
@@ -99,78 +88,12 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
             parentWidth={true}
             size="sm"
             label="Upload"
-            //     isLoading={isLoading}
             onClick={handleFileUpload}
           />
         </div>
       </div>
     </div>
-    //     </div>
   );
 };
 
 export default FileUpload;
-
-// import useFileUpload from "../../hooks/";
-
-// import { useState } from "react";
-// import axios from "axios";
-
-// function FileUpload() {
-//   const [file, setFile] = useState<File | null>(null);
-//   const [progress, setProgress] = useState<number>(0);
-//   const [uploadedUrl, setUploadedUrl] = useState<string>("");
-
-//   const handleUpload = async () => {
-//     if (!file) return;
-
-//     const formData = new FormData();
-//     formData.append("file", file);
-
-//     try {
-//       const res = await axios.post<{ url: string }>(
-//         "http://localhost:4000/api/file/upload",
-//         formData,
-//         {
-//           headers: { "Content-Type": "multipart/form-data" },
-//           onUploadProgress: (progressEvent) => {
-//             if (progressEvent.total) {
-//               setProgress(
-//                 Math.round((progressEvent.loaded * 100) / progressEvent.total),
-//               );
-//             }
-//           },
-//         },
-//       );
-
-//       setUploadedUrl(res.data.url);
-//     } catch (err) {
-//       console.error("Upload failed", err);
-//     }
-//   };
-
-//   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-//     if (e.target.files && e.target.files.length > 0) {
-//       setFile(e.target.files[0]);
-//     }
-//   };
-
-//   return (
-//     <div className="fixed top-0 left-0 h-screen w-screen bg-red-200">
-//       <input type="file" onChange={handleFileChange} />
-//       <button onClick={handleUpload}>Upload</button>
-
-//       {progress > 0 && <p>Progress: {progress}%</p>}
-//       {uploadedUrl && (
-//         <div>
-//           <p>Uploaded File:</p>
-//           <a href={uploadedUrl} target="_blank" rel="noopener noreferrer">
-//             {uploadedUrl}
-//           </a>
-//         </div>
-//       )}
-//     </div>
-//   );
-// }
-
-// export default FileUpload;

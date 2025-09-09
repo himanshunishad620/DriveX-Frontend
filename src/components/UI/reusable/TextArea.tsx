@@ -28,12 +28,9 @@ const TextArea: React.FC<TextAreaProps> = (props) => {
       </label>
       <textarea
         id={uniqueId}
-        // className={`peer ${getClassName(props.size || "sm", sizeObject, baseClass)}`}
         className="w-full resize-none rounded-xl border-2 border-gray-300 bg-white p-4 text-[12px] outline-none placeholder:text-[12px] placeholder:text-gray-400 focus:border-blue-600"
-        // type={props.type}
         required={props.required}
         placeholder={props.placeHolder}
-        // pattern={props.pattern}
         onChange={props.onChange}
         name={props.name}
         value={props.value}

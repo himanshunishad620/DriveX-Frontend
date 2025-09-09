@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { CgFacebook } from "react-icons/cg";
-// import { RiFileCopyLine } from "react-icons/ri";
 import { FaWhatsapp } from "react-icons/fa6";
 import { FaTelegramPlane } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
@@ -19,10 +18,7 @@ const ShareFilePopUp: React.FC<Props> = (props) => {
     try {
       await navigator.clipboard.writeText(props.url);
       setCopied(true);
-      // setTimeout(() => setCopied(false), 2000); // reset after 2s
-    } catch (err) {
-      console.error("Failed to copy:", err);
-    }
+    } catch (err) {}
   };
   return (
     <div className="fixed top-0 left-0 z-6 flex h-screen w-screen items-center justify-center bg-black/20">

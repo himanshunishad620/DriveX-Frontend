@@ -1,6 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 const apiBaseUrl=import.meta.env.VITE_BASE_URL
-// import type { FileData } from "../types/ComponentsProps";
 
 export const fileApi=createApi({
         reducerPath:'fileApi',

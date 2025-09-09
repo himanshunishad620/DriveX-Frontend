@@ -1,7 +1,6 @@
 import React from "react";
 import type { FileData } from "../../../types/ComponentsProps";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
-// import loading from "./../../../assets/";
 import FileCard from "./FIleCard";
 import { useGetStorageQuery } from "../../../api/fileApi";
 type Props = {
@@ -27,8 +26,6 @@ const FileContainer: React.FC<Props> = (props) => {
           ))}
         </div>
       ) : (
-        // <div className="overflow-hidden">
-        // <div className="">
         <>
           <DotLottieReact
             className="h-60"
@@ -45,7 +42,6 @@ const FileContainer: React.FC<Props> = (props) => {
           </p>
         </>
       )}
-      {/* </div> */}
     </>
   );
 };

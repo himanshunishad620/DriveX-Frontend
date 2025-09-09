@@ -1,7 +1,6 @@
 import { createContext, useContext } from "react";
 import type { WrapperProps } from "../types/ComponentsProps";
 import useFileUpload from "../hooks/useFileUpload";
-// import useFileUpload from "../hooks/useFileUpload";
 
 const FileUploadContext = createContext<any>("");
 

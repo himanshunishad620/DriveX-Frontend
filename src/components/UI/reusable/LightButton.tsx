@@ -31,7 +31,6 @@ const LightButton: React.FC<ButtonProps> = (props) => {
       disabled={props.isLoading}
       className={getClassName(props.size || "sm", sizeObject, baseClass)}
     >
-      {/* {props.isLoading ? <Spinner /> : props.label} */}
       {props.isLoading ? (
         <Spinner />
       ) : (

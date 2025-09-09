@@ -30,7 +30,6 @@ const FileCard: React.FC<FileData> = (props) => {
   const handleDeletePopUpToggle = () => {
     setDeletePopUpToggle(!deletePopUpToggle);
   };
-  // console.log(props.fileType);
   return (
     <div className="relative aspect-3/2 w-full rounded-xl bg-white">
       <div className="flex items-end justify-between p-3">
@@ -40,7 +39,6 @@ const FileCard: React.FC<FileData> = (props) => {
           <img
             className="h-15 w-15 rounded-full shadow"
             src={props.downloadUrl}
-            // src={Demo}
             alt=""
             loading="lazy"
           />

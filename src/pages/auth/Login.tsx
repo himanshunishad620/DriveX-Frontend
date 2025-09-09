@@ -13,7 +13,6 @@ const Login: React.FC = () => {
   const { doLogin } = useAuthContext();
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
-    // email: "ras.aydin@malldrops.com",
     email: "",
     password: "",
     // email: "mane.aryan@malldrops.com",
@@ -24,7 +23,7 @@ const Login: React.FC = () => {
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      const result = await login(values).unwrap(); // Use unwrap() for better error handling
+      const result = await login(values).unwrap();
       console.log(result);
 
       if (result) {

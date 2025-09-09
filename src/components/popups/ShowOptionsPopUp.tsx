@@ -2,10 +2,9 @@ import React, { useEffect, useRef } from "react";
 import { MdOutlineFileDownload, MdOutlineDeleteForever } from "react-icons/md";
 import { MdOutlinePublishedWithChanges } from "react-icons/md";
 import { RiShareFill } from "react-icons/ri";
-// import { RiShareFill } from "react-icons/ri";
 type Props = {
-  handleShowOptionsToggle: () => void;
   url: string;
+  handleShowOptionsToggle: () => void;
   handleDeletePopUpToggle: () => void;
   handleRenameFilePopUpToggle: () => void;
   handleShareFilePopUpToggle: () => void;
@@ -55,12 +54,6 @@ const ShowOptionsPopUp: React.FC<Props> = (props) => {
         </div>
         <p className="text-[11px] font-medium text-gray-500">Share</p>
       </div>
-      {/* <div className="flex h-8 w-full cursor-pointer items-center gap-2 border-t-1 border-gray-300 p-1 duration-200 hover:bg-yellow-100 [&:nth-child(1)]:border-none">
-        <div className="flex aspect-square h-full items-center justify-center rounded-full bg-yellow-100">
-          <RiQuestionLine className="text-yellow-500" />
-        </div>
-        <p className="text-[11px] font-medium text-gray-500">Details</p>
-      </div> */}
       <div
         onClick={props.handleDeletePopUpToggle}
         className="flex h-8 w-full cursor-pointer items-center gap-2 border-t-1 border-gray-300 p-1 duration-200 hover:bg-red-100 [&:nth-child(1)]:border-none"

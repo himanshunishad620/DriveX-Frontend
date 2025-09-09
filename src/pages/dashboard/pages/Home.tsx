@@ -22,7 +22,6 @@ const Home: React.FC = () => {
     );
   console.log(data);
   return (
-    //scrollbar-hide relative h-full w-full overflow-scroll px-3 md:px-10
     <div className="grid h-full w-full grid-cols-1 gap-5 p-3 md:grid-cols-2 md:gap-10 md:p-10">
       <div className="grid h-full w-full grid-cols-1 grid-rows-3 gap-3 md:gap-5">
         {/* storage details */}
@@ -84,16 +83,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-//  <div className="grid h-full w-full grid-cols-2 gap-10 p-10">
-//       <div className="grid h-full w-full grid-cols-1 grid-rows-3 gap-5">
-//         <div className="h-full w-full rounded-xl bg-[#407BE8]"></div>
-//         <div className="row-span-2 grid h-full w-full grid-cols-2 grid-rows-2 gap-5">
-//           <div className="h-full w-full rounded-xl bg-white"></div>
-//           <div className="h-full w-full rounded-xl bg-white"></div>
-//           <div className="h-full w-full rounded-xl bg-white"></div>
-//           <div className="h-full w-full rounded-xl bg-white"></div>
-//         </div>
-//       </div>
-//       <div className="h-full w-full rounded-xl bg-white">hi</div>
-//     </div>
