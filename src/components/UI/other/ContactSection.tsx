@@ -63,8 +63,8 @@ const ContactSection: React.FC = () => {
               <div className="w-1/2">
                 <TextInput
                   label="First Name"
-                  helperText="Please enter your nice name."
-                  placeHolder="Firt Name"
+                  placeHolder="Please enter your nice name."
+                  // placeHolder="Firt Name"
                   name="firstName"
                   parentWidth={true}
                   type="text"
@@ -75,8 +75,8 @@ const ContactSection: React.FC = () => {
               <div className="w-1/2">
                 <TextInput
                   label="Last Name"
-                  helperText="Please enter your nice name."
-                  placeHolder="Last Name"
+                  placeHolder="Please enter your nice name."
+                  // placeHolder="Last Name"
                   parentWidth={true}
                   name="lastName"
                   type="text"
@@ -88,8 +88,8 @@ const ContactSection: React.FC = () => {
             <div className="w-full md:w-5/7">
               <TextInput
                 label="Email"
-                helperText="Please enter your valid email."
-                placeHolder="Email"
+                placeHolder="Please enter your valid email."
+                // placeHolder="Email"
                 parentWidth={true}
                 name="email"
                 type="email"

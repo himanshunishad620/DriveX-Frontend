@@ -39,7 +39,7 @@ const App: React.FC = () => {
         <p className="text-center text-2xl font-bold text-gray-500 md:text-3xl">
           No Internet Connection
         </p>
-        <p className="text-center text-lg font-normal text-gray-500 md:text-lg">
+        <p className="mx-3 text-center text-lg font-normal text-gray-500 md:mx-0 md:text-lg">
           Please make sure that you have stable internet connection
         </p>
       </div>

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
         autoplay
       />
     );
-  console.log(data?.result);
+  console.log(data);
   return (
     //scrollbar-hide relative h-full w-full overflow-scroll px-3 md:px-10
     <div className="grid h-full w-full grid-cols-1 gap-5 p-3 md:grid-cols-2 md:gap-10 md:p-10">

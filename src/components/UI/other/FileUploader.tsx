@@ -9,6 +9,7 @@ import { getFileSize } from "../../../helper/helperMethod";
 import Button from "../reusable/Button";
 import LightButton from "../reusable/LightButton";
 import { useToast } from "../../../hooks/useToast";
+import { MdClose } from "react-icons/md";
 // import { useToast } from "../../../hooks/useToast";
 // import type { UploadFilePopUpProps } from "../../types/ComponentsProps";
 // import { useFileUploadContext } from "../../context/FileUploadProvider";
@@ -88,6 +89,7 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
             parentWidth={true}
             size="sm"
             label="Cancel"
+            icon={MdClose}
             onClick={() => props.setUploadFileToggle((pre) => !pre)}
           />
         </div>

@@ -5,6 +5,7 @@ import { formatToMBorGB } from "../../../helper/helperMethod";
 
 const CategoryItems: React.FC<CategoryItemsProps> = (props) => {
   const Icon: IconType = props.icon;
+  // console.log(props.)
   return (
     <div className="flex h-full w-full flex-col justify-between rounded-xl bg-white p-3">
       {/* label */}
@@ -50,7 +51,7 @@ const CategoryItems: React.FC<CategoryItemsProps> = (props) => {
       </div>
       {/* time  */}
       <p className="mt-0 text-center text-sm text-gray-400">
-        Updated on {props.time}{" "}
+        Updated on {props.time}
       </p>
     </div>
   );

@@ -14,10 +14,10 @@ const Login: React.FC = () => {
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
     // email: "ras.aydin@malldrops.com",
-    // email: "",
-    // password: "",
-    email: "mane.aryan@malldrops.com",
-    password: "Himan@123",
+    email: "",
+    password: "",
+    // email: "mane.aryan@malldrops.com",
+    // password: "Himan@123",
   });
   const navigate = useNavigate();
   const { showSuccess, showError } = useToast();
