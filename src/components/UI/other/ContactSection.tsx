@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import TextInput from "../reusable/TextInput";
 import useFormHook from "../../../hooks/useFormHook";
 import TextArea from "../reusable/TextArea";
@@ -10,15 +10,32 @@ import { FiGithub } from "react-icons/fi";
 import { MdLocalPhone, MdOutlineEmail } from "react-icons/md";
 import type { IconType } from "react-icons";
 import { RiLinkM } from "react-icons/ri";
+import axios from "axios";
+import { useToast } from "../../../hooks/useToast";
 
+const apiBaseUrl = import.meta.env.VITE_BASE_URL;
 const ContactSection: React.FC = () => {
-  const { values, handleChange } = useFormHook({
+  const { showSuccess, showError } = useToast();
+  const { values, handleChange, resetForm } = useFormHook({
     firstName: "",
-    lastname: "",
+    lastName: "",
     email: "",
     message: "",
   });
-  console.log(values);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    try {
+      const res = await axios.post(apiBaseUrl + "/api/others/contact", values);
+      showSuccess(res.data.msg);
+    } catch (error) {
+      showError("Internal Server Error!");
+    } finally {
+      resetForm();
+      setIsLoading(false);
+    }
+  };
   return (
     <>
       <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-5xl">
@@ -29,14 +46,12 @@ const ContactSection: React.FC = () => {
           <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-left md:text-4xl md:text-blue-500">
             Get in Touch
           </h1>
-          {/* <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-5xl">
-        Features
-      </h1> */}
+
           <LinkedText
             subTitle="LinkedIn"
             icon={FaLinkedinIn}
-            link="https://www.linkedin.com/in/himanshunishad620"
-            description="linkedin.com/in/himanshunishad620"
+            link="https://www.linkedin.com/in/himanshunishad"
+            description="linkedin.com/in/himanshunishad"
           />
           <LinkedText
             subTitle="Email"
@@ -58,15 +73,18 @@ const ContactSection: React.FC = () => {
           />
         </div>
         <div className="w-full p-1 md:w-1/2 md:p-5">
-          <form className="mt-3 flex flex-col items-center justify-center gap-2 rounded-2xl border-1 border-blue-500 bg-blue-50 px-2 py-5 md:mt-0">
+          <form
+            onSubmit={handleSubmit}
+            className="mt-3 flex flex-col items-center justify-center gap-2 rounded-2xl border-1 border-blue-500 bg-blue-50 px-5 py-5 md:mt-0"
+          >
             <div className="flex w-full gap-2 md:w-5/7">
               <div className="w-1/2">
                 <TextInput
                   label="First Name"
-                  placeHolder="Please enter your nice name."
-                  // placeHolder="Firt Name"
+                  placeHolder="Enter your first name"
                   name="firstName"
                   parentWidth={true}
+                  required={true}
                   type="text"
                   value={values.firstName}
                   onChange={handleChange}
@@ -75,12 +93,12 @@ const ContactSection: React.FC = () => {
               <div className="w-1/2">
                 <TextInput
                   label="Last Name"
-                  placeHolder="Please enter your nice name."
-                  // placeHolder="Last Name"
+                  placeHolder="Enter your last name."
                   parentWidth={true}
                   name="lastName"
                   type="text"
-                  value={values.lastname}
+                  required={true}
+                  value={values.lastName}
                   onChange={handleChange}
                 />
               </div>
@@ -89,9 +107,9 @@ const ContactSection: React.FC = () => {
               <TextInput
                 label="Email"
                 placeHolder="Please enter your valid email."
-                // placeHolder="Email"
                 parentWidth={true}
                 name="email"
+                required={true}
                 type="email"
                 value={values.email}
                 onChange={handleChange}
@@ -100,12 +118,12 @@ const ContactSection: React.FC = () => {
             <div className="w-full md:w-5/7">
               <TextArea
                 label="Message"
-                // helperText="Please type your honest suggestions and feedback."
                 placeHolder="Please type your honest suggestions and feedback."
                 name="message"
                 parentWidth={true}
                 value={values.message}
                 onChange={handleChange}
+                required={true}
                 rows={6}
               />
             </div>
@@ -115,7 +133,7 @@ const ContactSection: React.FC = () => {
                 size="md"
                 parentWidth={true}
                 icon={IoMdSend}
-                // isLoading={true}
+                isLoading={isLoading}
               />
             </div>
           </form>

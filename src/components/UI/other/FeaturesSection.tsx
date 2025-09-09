@@ -16,7 +16,7 @@ const FeaturesSection: React.FC = () => {
           </p>
           <p className="my-2 text-sm leading-4 font-medium text-gray-400">
             Seamlessly upload, download, and share your files within seconds —
-            no delays, no limits, just pure speed.
+            no delays, just pure speed.
           </p>
         </div>
         <div className="h-full w-full rounded-xl border-1 border-blue-500 bg-blue-50 p-5 md:w-1/3">

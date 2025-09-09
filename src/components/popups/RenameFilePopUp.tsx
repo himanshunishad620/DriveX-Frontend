@@ -25,7 +25,7 @@ const RenameFilePopUp: React.FC<Props> = (props) => {
         ...values,
         fileName: props.fileName,
         _id: props._id,
-      });
+      }).unwrap();
       showSuccess("File Renamed!");
       props.handleRenameFilePopUpToggle();
     } catch (error) {

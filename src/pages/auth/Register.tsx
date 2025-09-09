@@ -28,14 +28,12 @@ const Register: React.FC = () => {
     }
     try {
       const res = await generateOtp({ email: values.email }).unwrap();
-      console.log(res);
 
       if (res) {
         showSuccess("OTP Generated Successfuly!");
         setShow(true);
       }
     } catch (error) {
-      console.log(error);
       showError("Unable To Generate OTP!");
       setShow(false);
     }

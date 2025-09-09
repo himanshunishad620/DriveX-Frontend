@@ -9,6 +9,7 @@ const LinkText: React.FC<LinKTextProps> = (props) => {
       <Link
         className="text-[12px] font-semibold text-blue-500 duration-300 hover:text-[#1762EF]"
         to={props.targetPage}
+        replace={true}
       >
         {props.linkText}
       </Link>
