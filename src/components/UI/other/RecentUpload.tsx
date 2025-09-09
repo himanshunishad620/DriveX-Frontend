@@ -20,7 +20,7 @@ const RecentUpload: React.FC<RecentUploadProps> = (props) => {
       {list.length === 0 && (
         <>
           <DotLottieReact
-            className="h-60"
+            className="h-30 md:h-60"
             src="/notfound.lottie"
             loop
             autoplay

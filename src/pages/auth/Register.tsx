@@ -17,10 +17,14 @@ const Register: React.FC = () => {
   };
   const { showSuccess, showError } = useToast();
   const { values, handleChange } = useFormHook({
-    email: "mane.aryan@malldrops.com",
-    password: "Himan@123",
-    confirmPassword: "Himan@123",
+    email: "",
+    password: "",
+    confirmPassword: "",
   });
+  //   email: "mane.aryan@malldrops.com",
+  //   password: "Himan@123",
+  //   confirmPassword: "Himan@123",
+  // });
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (values.confirmPassword.trim() !== values.password.trim()) {

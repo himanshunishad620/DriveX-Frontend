@@ -62,6 +62,8 @@ const ContactSection: React.FC = () => {
             <div className="flex w-full gap-2 md:w-5/7">
               <div className="w-1/2">
                 <TextInput
+                  label="First Name"
+                  helperText="Please enter your nice name."
                   placeHolder="Firt Name"
                   name="firstName"
                   parentWidth={true}
@@ -72,6 +74,8 @@ const ContactSection: React.FC = () => {
               </div>
               <div className="w-1/2">
                 <TextInput
+                  label="Last Name"
+                  helperText="Please enter your nice name."
                   placeHolder="Last Name"
                   parentWidth={true}
                   name="lastName"
@@ -83,6 +87,8 @@ const ContactSection: React.FC = () => {
             </div>
             <div className="w-full md:w-5/7">
               <TextInput
+                label="Email"
+                helperText="Please enter your valid email."
                 placeHolder="Email"
                 parentWidth={true}
                 name="email"
@@ -93,7 +99,9 @@ const ContactSection: React.FC = () => {
             </div>
             <div className="w-full md:w-5/7">
               <TextArea
-                placeHolder="Message"
+                label="Message"
+                // helperText="Please type your honest suggestions and feedback."
+                placeHolder="Please type your honest suggestions and feedback."
                 name="message"
                 parentWidth={true}
                 value={values.message}
