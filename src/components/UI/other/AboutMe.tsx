@@ -1,5 +1,5 @@
 import React from "react";
-import illustration from "./../../../assets/Illustration.svg";
+import mydp from "./../../../assets/mydp.jpg";
 import { FaFile } from "react-icons/fa";
 import Button from "../reusable/Button";
 const AboutMe: React.FC = () => {
@@ -12,7 +12,7 @@ const AboutMe: React.FC = () => {
         <div className="flex w-full items-center justify-center p-8 md:w-1/2 md:p-0">
           <img
             className="shadow-blue w-full rounded-full border-8 border-blue-500 md:w-3/7"
-            src={illustration}
+            src={mydp}
             alt=""
           />
         </div>

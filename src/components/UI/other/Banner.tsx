@@ -3,11 +3,14 @@ import Button from "../reusable/Button";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
 import { useNavigate } from "react-router-dom";
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
+import { useAuthContext } from "../../../context/AuthProvider";
 
 const Banner: React.FC = () => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuthContext();
   const handleClick = () => {
-    navigate("./dashboard");
+    if (isAuthenticated) navigate("./dashboard");
+    else navigate("./auth");
   };
   return (
     <section className="flex w-full flex-col bg-blue-50 p-5 md:flex-row md:p-10">

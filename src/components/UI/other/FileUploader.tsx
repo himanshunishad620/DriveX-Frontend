@@ -52,7 +52,7 @@ const FileUpload: React.FC<UploadFilePopUpProps> = (props) => {
       <input
         type="file"
         onChange={handleFileChange}
-        className="opacity-0"
+        className="hidden"
         id="fileUpload"
       />
       <label htmlFor="fileUpload">

@@ -18,6 +18,7 @@ import { MdOutlineLogout } from "react-icons/md";
 import { useToast } from "../../../hooks/useToast";
 import IconButton from "../reusable/IconButton";
 import { BiX } from "react-icons/bi";
+import { useNavigate } from "react-router-dom";
 
 const navItems: NavItemProps[] = [
   {
@@ -54,11 +55,13 @@ type Props = {
 
 const SideBar: React.FC<Props> = (props) => {
   const [logout, { isLoading }] = useLogoutMutation();
+  const navigate = useNavigate();
   const { doLogout } = useAuthContext();
   const { showSuccess, showError } = useToast();
   const handleLogout = async () => {
     try {
       await logout();
+      navigate("/", { replace: true });
       doLogout();
       showSuccess("Logged Out SUccessfuly!");
     } catch (error) {

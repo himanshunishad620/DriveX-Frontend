@@ -6,7 +6,11 @@ import Loader from "./Loader";
 const PrivateRoute: React.FC<WrapperProps> = ({ children }) => {
   const { isAuthenticated, isAuthenticating } = useAuthContext();
   if (isAuthenticating) return <Loader />;
-  return isAuthenticated ? <>{children}</> : <Navigate to={"/auth"} />;
+  return isAuthenticated ? (
+    <>{children}</>
+  ) : (
+    <Navigate to={"/"} replace={true} />
+  );
 };
 
 export default PrivateRoute;

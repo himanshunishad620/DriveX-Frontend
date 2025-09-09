@@ -9,7 +9,7 @@ const UploadingList: React.FC = () => {
   // if (!fileUploadingArray.length)
   //   return <div className="h-78 w-100 bg-green-500"></div>;
   return (
-    <div className="h-78 w-90 bg-white p-5 md:w-100">
+    <div className="h-78 w-90 bg-white p-2 md:w-100 md:p-5">
       {/* {!fileUploadingArray.length && (
         <div className="w-full flex-1 bg-red-200"></div>
       )} */}

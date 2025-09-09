@@ -5,6 +5,9 @@ import TextInput from "../UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useRenameFileMutation } from "../../api/fileApi";
 import { useToast } from "../../hooks/useToast";
+// import { FaCut } from "react-icons/fa";
+import { IoClose } from "react-icons/io5";
+import { CgRename } from "react-icons/cg";
 
 type Props = {
   //   renameUrl: string;
@@ -52,11 +55,17 @@ const RenameFilePopUp: React.FC<Props> = (props) => {
           />
           <div className="flex justify-between gap-2">
             <LightButton
-              label="Cancel"
+              label="Close"
+              icon={IoClose}
               size="sm"
               onClick={props.handleRenameFilePopUpToggle}
             />
-            <Button label="Rename" size="sm" isLoading={isLoading} />
+            <Button
+              label="Rename"
+              size="sm"
+              isLoading={isLoading}
+              icon={CgRename}
+            />
           </div>
         </form>
       </div>

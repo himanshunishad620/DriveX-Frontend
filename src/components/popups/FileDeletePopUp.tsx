@@ -3,6 +3,8 @@ import Button from "../UI/reusable/Button";
 import LightButton from "../UI/reusable/LightButton";
 import { useDeleteFileMutation } from "../../api/fileApi";
 import { useToast } from "../../hooks/useToast";
+import { IoClose } from "react-icons/io5";
+import { MdDelete } from "react-icons/md";
 type Props = {
   handleDeletePopUpToggle: () => void;
   deleteUrl: string;
@@ -38,6 +40,7 @@ const FileDeletePopUp: React.FC<Props> = (props) => {
             onClick={() => props.handleDeletePopUpToggle()}
             label="cancel"
             size="sm"
+            icon={IoClose}
           />
           {/* </div> */}
           {/* <div className="shadow-blue"> */}
@@ -45,6 +48,7 @@ const FileDeletePopUp: React.FC<Props> = (props) => {
             label="delete"
             parentWidth={false}
             size="sm"
+            icon={MdDelete}
             onClick={handleDeleteFile}
             isLoading={isLoading}
           />

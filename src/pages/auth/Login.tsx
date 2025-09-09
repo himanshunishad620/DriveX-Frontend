@@ -28,7 +28,7 @@ const Login: React.FC = () => {
       if (result) {
         showSuccess("Logged In Successfully!");
         doLogin(result._id);
-        navigate("/dashboard");
+        navigate("/dashboard", { replace: true });
       }
     } catch (error) {
       showError("Something Went Wrong!");

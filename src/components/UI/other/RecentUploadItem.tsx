@@ -46,8 +46,8 @@ const RecentUploadItem: React.FC<FileListItemProps> = (props) => {
 
   // Format in local timezone
   return (
-    <div className="my-0 flex h-14 w-full items-center justify-between gap-4 px-4 md:my-2 md:px-7">
-      <div className="flex h-full items-center gap-3 overflow-x-hidden">
+    <div className="my-0 flex h-14 w-full items-center justify-between gap-4 px-3 md:my-2 md:px-7">
+      <div className="flex h-full items-center gap-1 overflow-x-hidden md:gap-3">
         <IconPlate
           color={iconObject[props.fileType].color}
           icon={iconObject[props.fileType].icon}
@@ -60,10 +60,6 @@ const RecentUploadItem: React.FC<FileListItemProps> = (props) => {
           </span>
         </p>
       </div>
-      {/* <IconButton
-        icon={PiDotsThreeOutlineVerticalLight}
-        iconColor="text-gray-500"
-      /> */}
     </div>
   );
 };

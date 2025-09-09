@@ -21,7 +21,7 @@ const LightButton: React.FC<ButtonProps> = (props) => {
       sizeObject[key] +
       baseClass +
       (props.parentWidth ? " w-full" : " w-40") +
-      (props.isLoading ? " cursor-not-allowed" : " cursor-pointer") +
+      (props.isLoading ? " cursor-progress" : " cursor-pointer") +
       (props.margin ? " my-2" : "")
     );
   };

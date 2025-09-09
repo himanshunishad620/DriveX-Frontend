@@ -11,7 +11,7 @@ const RecentUpload: React.FC<RecentUploadProps> = (props) => {
   // console.log(list.reverse());
   return (
     <div className="scrollbar-hide relative h-full w-full overflow-scroll rounded-xl bg-white">
-      <p className="sticky top-0 left-0 z-10 flex items-center justify-between bg-white px-4 py-2 text-xl font-bold text-[#333F4E] md:px-7 md:py-4">
+      <p className="sticky top-0 left-0 z-5 flex items-center justify-between bg-white p-3 text-xl font-bold text-[#333F4E] md:px-7 md:py-4">
         Recent Files Uploaded
         {/* <span>
           <IconButton icon={BiX} iconColor="text-gray-400" />

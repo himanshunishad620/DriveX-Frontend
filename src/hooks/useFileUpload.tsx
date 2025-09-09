@@ -72,11 +72,11 @@ const useFileUpload = () => {
       console.error("Upload failed", err);
       showError("File Upload Failed!");
     } finally {
-      setFileUploadingArray((pre) =>
-        pre.filter((f) => {
-          return f.id !== id;
-        }),
-      );
+      // setFileUploadingArray((pre) =>
+      //   pre.filter((f) => {
+      //     return f.id !== id;
+      //   }),
+      // );
     }
   };
   return { fileUploadingArray, uploadFile };

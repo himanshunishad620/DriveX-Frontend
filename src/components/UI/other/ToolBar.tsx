@@ -116,19 +116,19 @@ const ToolBar: React.FC<Props> = (props) => {
             value="name"
             className="cursor-pointer border-none bg-white text-gray-500 outline-none"
           >
-            File Name
+            Name
           </option>
           <option
             value="size"
             className="cursor-pointer border-none bg-white text-gray-500 outline-none"
           >
-            File Size
+            Size
           </option>
           <option
             value="createdAt"
             className="cursor-pointer border-none bg-white text-gray-500 outline-none"
           >
-            Date Created
+            Date
           </option>
         </select>
         {/* {SortButtonArray[selectedIndex]} */}

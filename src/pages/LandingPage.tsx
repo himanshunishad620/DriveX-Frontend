@@ -6,6 +6,7 @@ import HowToUse from "../components/UI/other/HowToUse";
 import ContactSection from "../components/UI/other/ContactSection";
 import Footer from "../components/UI/other/Footer";
 import AboutMe from "../components/UI/other/AboutMe";
+import Testimonials from "../components/UI/other/Testimonials";
 
 const LandingPage: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const LandingPage: React.FC = () => {
       <FeaturesSection />
       <AboutMe />
       <ContactSection />
+      <Testimonials />
       <Footer />
     </div>
   );
