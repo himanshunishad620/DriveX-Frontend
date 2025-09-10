@@ -37,7 +37,9 @@ const AboutMe: React.FC = () => {
             it as a showcase of my ability to design, develop, and deliver
             complete applications from scratch.
           </i>
-          <Button label="Resume" size="md" icon={FaFile} />
+          <a href="https://backend-u36p.onrender.com/api/file/download?url=https://res.cloudinary.com/do0rqy4oy/raw/upload/v1757482447/eez5nhxjozva0uegeyll&fileName=Himanshu_Nishad_Frontend_Developer_Resume.pdf">
+            <Button label="Resume" size="md" icon={FaFile} />
+          </a>
         </div>
       </div>
     </section>
