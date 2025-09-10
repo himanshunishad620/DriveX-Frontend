@@ -24,8 +24,6 @@ const Login: React.FC = () => {
     e.preventDefault();
     try {
       const result = await login(values).unwrap();
-      console.log(result);
-
       if (result) {
         showSuccess("Logged In Successfully!");
         doLogin(result._id);

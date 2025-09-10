@@ -20,7 +20,6 @@ const Home: React.FC = () => {
         autoplay
       />
     );
-  console.log(data);
   return (
     <div className="grid h-full w-full grid-cols-1 gap-5 p-3 md:grid-cols-2 md:gap-10 md:p-10">
       <div className="grid h-full w-full grid-cols-1 grid-rows-3 gap-3 md:gap-5">
