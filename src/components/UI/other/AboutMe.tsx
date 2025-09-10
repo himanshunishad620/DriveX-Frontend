@@ -1,7 +1,7 @@
 import React from "react";
 import mydp from "./../../../assets/mydp.jpg";
-import { FaFile } from "react-icons/fa";
 import Button from "../reusable/Button";
+import { MdOutlineFileDownload } from "react-icons/md";
 const AboutMe: React.FC = () => {
   return (
     <section className="w-full px-5 md:px-10">
@@ -38,7 +38,7 @@ const AboutMe: React.FC = () => {
             complete applications from scratch.
           </i>
           <a href="https://backend-u36p.onrender.com/api/file/download?url=https://res.cloudinary.com/do0rqy4oy/raw/upload/v1757482447/eez5nhxjozva0uegeyll&fileName=Himanshu_Nishad_Frontend_Developer_Resume.pdf">
-            <Button label="Download Resume" size="md" icon={FaFile} />
+            <Button label="Resume" size="sm" icon={MdOutlineFileDownload} />
           </a>
         </div>
       </div>
