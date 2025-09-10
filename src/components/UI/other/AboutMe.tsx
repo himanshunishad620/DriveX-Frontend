@@ -35,7 +35,7 @@ const AboutMe: React.FC = () => {
             real-world problems with simple yet powerful solutions. While users
             see it as a free and easy-to-use cloud storage, recruiters can see
             it as a showcase of my ability to design, develop, and deliver
-            complete applications from scratch.j
+            complete applications from scratch.
           </i>
           <a href="https://backend-u36p.onrender.com/api/file/download?url=https://res.cloudinary.com/do0rqy4oy/raw/upload/v1757482447/eez5nhxjozva0uegeyll&fileName=Himanshu_Nishad_Frontend_Developer_Resume.pdf">
             <Button label="Resume" size="sm" icon={MdOutlineFileDownload} />
