@@ -8,6 +8,9 @@ import TextInput from "../../components/UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useAuthContext } from "../../context/AuthProvider";
 import { useToast } from "../../hooks/useToast";
+// const apiBaseUrl=import.meta.env.VITE_BA
+const apiBaseUrl = import.meta.env.VITE_BASE_URL;
+console.log(apiBaseUrl + "/api/auth/");
 
 const Login: React.FC = () => {
   const { doLogin } = useAuthContext();

@@ -2,6 +2,7 @@ import { fetchBaseQuery } from "@reduxjs/toolkit/query"
 import {createApi} from "@reduxjs/toolkit/query/react"
 import type { RegisterApi } from "../types/HookProps"
 const apiBaseUrl=import.meta.env.VITE_BASE_URL
+
 export const authApi=createApi({
   reducerPath:"authApi",
   baseQuery:fetchBaseQuery({baseUrl:apiBaseUrl+"/api/auth/",
