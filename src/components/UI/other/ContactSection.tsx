@@ -38,7 +38,7 @@ const ContactSection: React.FC = () => {
   };
   return (
     <>
-      <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-5xl">
+      <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-4xl">
         Contact Us
       </h1>
       <div className="flex w-full flex-col-reverse px-5 md:flex-row md:px-10">

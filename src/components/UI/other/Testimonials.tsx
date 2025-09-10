@@ -6,7 +6,7 @@ import girl from "./../../../assets/girl.jpg";
 const Testimonials: React.FC = () => {
   return (
     <section className="w-full px-5 md:px-10">
-      <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-5xl">
+      <h1 className="pt-2 text-center text-3xl font-semibold text-gray-600 md:text-4xl">
         Testimonial
       </h1>
       <div className="flex w-full flex-col gap-4 p-1 md:flex-row md:p-5">
