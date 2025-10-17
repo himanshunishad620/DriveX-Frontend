@@ -8,18 +8,15 @@ import TextInput from "../../components/UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useAuthContext } from "../../context/AuthProvider";
 import { useToast } from "../../hooks/useToast";
-// const apiBaseUrl=import.meta.env.VITE_BA
-const apiBaseUrl = import.meta.env.VITE_BASE_URL;
-console.log(apiBaseUrl + "/api/auth/");
 
 const Login: React.FC = () => {
   const { doLogin } = useAuthContext();
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
-    email: "",
-    password: "",
-    // email: "mane.aryan@malldrops.com",
-    // password: "Himan@123",
+    // email: "",
+    // password: "",
+    email: "mane.aryan@malldrops.com",
+    password: "Himan@123",
   });
   const navigate = useNavigate();
   const { showSuccess, showError } = useToast();
