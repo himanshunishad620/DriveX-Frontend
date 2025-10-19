@@ -85,7 +85,7 @@ const Login: React.FC = () => {
             linkText="Forgot Password?"
           />
           <Button
-            label="Submit"
+            label="Login"
             size="sm"
             parentWidth={true}
             isLoading={isLoading}
