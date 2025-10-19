@@ -1,4 +1,4 @@
-import { fetchBaseQuery, type FetchArgs } from "@reduxjs/toolkit/query"
+import { fetchBaseQuery } from "@reduxjs/toolkit/query"
 import {createApi} from "@reduxjs/toolkit/query/react"
 import type { RegisterApi } from "../types/HookProps"
 const apiBaseUrl=import.meta.env.VITE_BASE_URL
