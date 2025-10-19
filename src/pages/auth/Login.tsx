@@ -62,7 +62,7 @@ const Login: React.FC = () => {
             placeHolder="e.g. abc@mail.com"
             size="md"
             parentWidth={true}
-            helperText="Please enter valid email to get OTP."
+            helperText="Please enter your registered email."
             required={true}
             onChange={handleChange}
           />
@@ -74,7 +74,7 @@ const Login: React.FC = () => {
             placeHolder="e.g. Abcd@123"
             size="md"
             parentWidth={true}
-            helperText="Password must have min 8 character."
+            helperText="Please enter your password."
             required={true}
             onChange={handleChange}
           />

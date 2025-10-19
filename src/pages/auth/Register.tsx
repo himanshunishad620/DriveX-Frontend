@@ -92,7 +92,7 @@ const Register: React.FC = () => {
             placeHolder="e.g. Abcd@123"
             size="md"
             parentWidth={true}
-            helperText="Re-type you password."
+            helperText="Re-type your password."
             required={true}
             onChange={handleChange}
           />
