@@ -13,10 +13,8 @@ const Login: React.FC = () => {
   const { doLogin } = useAuthContext();
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
-    // email: "",
-    // password: "",
-    email: "mane.aryan@malldrops.com",
-    password: "Himan@123",
+    email: "",
+    password: "",
   });
   const navigate = useNavigate();
   const { showSuccess, showError } = useToast();

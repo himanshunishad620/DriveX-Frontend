@@ -53,7 +53,6 @@ export const AuthProvider: React.FC<WrapperProps> = ({ children }) => {
   );
 };
 
-// ✅ Custom hook — named export only
 export const useAuthContext = (): AuthContextType => {
   const context = useContext(AuthContext);
   if (!context) {

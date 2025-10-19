@@ -1,6 +1,6 @@
 import { DotLottieReact } from "@lottiefiles/dotlottie-react";
 
-const NotFound = () => {
+const NotFound: React.FC = () => {
   return (
     <DotLottieReact
       className="h-full w-full"
