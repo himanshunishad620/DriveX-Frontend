@@ -34,7 +34,7 @@ const App: React.FC = () => {
   });
   if (!isOnline)
     return (
-      <div className="flex h-[100dvh] w-full flex-col items-center justify-center">
+      <div className="flex h-screen w-full flex-col items-center justify-center">
         <MdOutlineSignalCellularConnectedNoInternet4Bar className="text-9xl text-gray-500" />
         <p className="text-center text-2xl font-bold text-gray-500 md:text-3xl">
           No Internet Connection
