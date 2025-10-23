@@ -29,7 +29,6 @@ const Login: React.FC = () => {
       }
     } catch (error) {
       showError("Something Went Wrong!");
-      console.error("Login failed:", error);
     }
   };
   return (
@@ -78,12 +77,22 @@ const Login: React.FC = () => {
             required={true}
             onChange={handleChange}
           />
+          {/* <div className="flex w-full justify-between">
+            <div className="flex items-center gap-1">
+              <input
+                type="checkbox"
+                className="cursor-pointer"
+                onChange={(e) => console.log(e.target.checked)}
+              />
+              <p className="text-[12px] text-gray-500">Remember</p>
+            </div> */}
           <LinkText
             text=""
             targetPage=""
             align="center"
             linkText="Forgot Password?"
           />
+          {/* </div> */}
           <Button
             label="Login"
             size="sm"

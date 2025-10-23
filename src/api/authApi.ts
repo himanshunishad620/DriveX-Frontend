@@ -6,6 +6,7 @@ const apiBaseUrl=import.meta.env.VITE_BASE_URL
 export const authApi=createApi({
   reducerPath:"authApi",
   baseQuery:fetchBaseQuery({baseUrl:apiBaseUrl+"/api/auth/",
+      // baseQuery:fetchBaseQuery({baseUrl:"http://localhost:4000/api/auth/",
       credentials: "include", 
   }),
   endpoints:(builder)=>({
@@ -39,6 +40,22 @@ export const authApi=createApi({
         method:'GET',
       })
     }),
+    forgotPassword:builder.mutation({
+      query:(email)=>({
+        url:`forgotPassword`,
+        body:email,
+        method:"POST",
+        timeout:10000
+      })  
+    }),
+    resetPassword:builder.mutation({
+      query:(data)=>({
+        url:`resetPassword`,
+        body:data,
+        method:"POST",
+        timeout:10000
+      })  
+    }),
     logout:builder.mutation<any, void>({
       query:()=>({
         url:"logout",
@@ -47,5 +64,5 @@ export const authApi=createApi({
     })
   })
 })
-export const {useGenerateOtpMutation,useRegisterMutation,useLoginMutation,useVerifyTokenMutation,useLogoutMutation}=authApi
+export const {useResetPasswordMutation,useForgotPasswordMutation,useGenerateOtpMutation,useRegisterMutation,useLoginMutation,useVerifyTokenMutation,useLogoutMutation}=authApi
 

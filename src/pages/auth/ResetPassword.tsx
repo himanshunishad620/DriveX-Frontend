@@ -1,41 +1,34 @@
-import { useGenerateOtpMutation } from "../../api/authApi";
-import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import illustration from "../../assets/Illustration.svg";
 import logo from "../../assets/Logo.svg";
-import RegisterOtpPopUp from "../../components/popups/RegisterOtpPopUp";
 import Button from "../../components/UI/reusable/Button";
-import LinkText from "../../components/UI/reusable/LinkText";
 import TextInput from "../../components/UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useToast } from "../../hooks/useToast";
+import { useResetPasswordMutation } from "../../api/authApi";
 
-const Register: React.FC = () => {
-  const [generateOtp, { isLoading }] = useGenerateOtpMutation();
-  const [show, setShow] = useState<boolean>(false);
-  const handleSetShowToggle = () => {
-    setShow(!show);
-  };
-  const { showSuccess, showError } = useToast();
+const ResetPassword: React.FC = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [resetPassword, { isLoading }] = useResetPasswordMutation();
+  const query = new URLSearchParams(location.search);
+  const token = query.get("token");
   const { values, handleChange } = useFormHook({
-    email: "",
     password: "",
     confirmPassword: "",
   });
+  const { showSuccess, showError } = useToast();
   const handleSumbit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     if (values.confirmPassword.trim() !== values.password.trim()) {
       return showError("Password And Confirm Password Not Matched!");
     }
     try {
-      const res = await generateOtp({ email: values.email }).unwrap();
-
-      if (res) {
-        showSuccess("OTP Generated Successfuly!");
-        setShow(true);
-      }
-    } catch (error) {
-      showError("Unable To Generate OTP!");
-      setShow(false);
+      const res = await resetPassword({ ...values, token }).unwrap();
+      showSuccess(res.msg);
+      navigate("./../../auth");
+    } catch (error: any) {
+      showError(error.data.msg);
     }
   };
   return (
@@ -57,31 +50,21 @@ const Register: React.FC = () => {
       <div className="flex w-full items-center justify-center bg-gray-100 md:w-1/2">
         <form
           onSubmit={handleSumbit}
-          className="shadow-3d flex w-90 flex-col items-center justify-center gap-1 rounded-md bg-white p-10"
+          className="shadow-3d flex w-90 flex-col items-center justify-center gap-2 rounded-xl bg-white p-10"
         >
-          <h1 className="text-2xl font-semibold text-blue-500">Register</h1>
-          <TextInput
-            type="email"
-            label="Email"
-            name="email"
-            value={values.email}
-            placeHolder="e.g. abc@mail.com"
-            size="md"
-            parentWidth={true}
-            helperText="Please enter valid email to get OTP."
-            required={true}
-            onChange={handleChange}
-          />
+          <h1 className="text-2xl font-semibold text-blue-500">
+            Reset Password
+          </h1>
           <TextInput
             type="password"
             label="Password"
             name="password"
             value={values.password}
             placeHolder="e.g. Abcd@123"
-            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
             size="md"
+            pattern="^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$"
             parentWidth={true}
-            helperText="Password must have min 8 character."
+            helperText="Enter your new password."
             required={true}
             onChange={handleChange}
           />
@@ -93,35 +76,22 @@ const Register: React.FC = () => {
             placeHolder="e.g. Abcd@123"
             size="md"
             parentWidth={true}
-            helperText="Re-type your password."
+            helperText="Again enter your new password."
             required={true}
             onChange={handleChange}
           />
 
+          {/* </div> */}
           <Button
-            label="Submit"
+            label="Reset Password"
             size="sm"
             parentWidth={true}
-            margin={true}
             isLoading={isLoading}
-          />
-          <LinkText
-            targetPage="/auth"
-            text="Already have an account?"
-            linkText="Go to login"
-            align="center"
           />
         </form>
       </div>
-      {show && (
-        <RegisterOtpPopUp
-          setShow={handleSetShowToggle}
-          email={values.email}
-          password={values.password}
-        />
-      )}
     </div>
   );
 };
 
-export default Register;
+export default ResetPassword;

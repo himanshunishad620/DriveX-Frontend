@@ -15,6 +15,8 @@ import { ToastContainer } from "react-toastify";
 import LandingPage from "./pages/LandingPage";
 import { useEffect, useState } from "react";
 import { MdOutlineSignalCellularConnectedNoInternet4Bar } from "react-icons/md";
+import ForgotPassword from "./pages/auth/ForgotPassword";
+import ResetPassword from "./pages/auth/ResetPassword";
 
 const App: React.FC = () => {
   const [isOnline, setIsOnline] = useState<boolean>(window.navigator.onLine);
@@ -75,6 +77,8 @@ const App: React.FC = () => {
         >
           <Route index element={<Login />} />
           <Route path="register" element={<Register />} />
+          <Route path="forgotPassword" element={<ForgotPassword />} />
+          <Route path="resetPassword" element={<ResetPassword />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>
