@@ -88,7 +88,7 @@ const Login: React.FC = () => {
             </div> */}
           <LinkText
             text=""
-            targetPage=""
+            targetPage="/auth/forgotPassword"
             align="center"
             linkText="Forgot Password?"
           />

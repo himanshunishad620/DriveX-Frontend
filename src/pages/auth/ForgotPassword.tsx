@@ -1,3 +1,4 @@
+import { IoCheckmarkDoneCircleOutline } from "react-icons/io5";
 import { useForgotPasswordMutation } from "../../api/authApi";
 import illustration from "../../assets/Illustration.svg";
 import logo from "../../assets/Logo.svg";
@@ -24,7 +25,15 @@ const ForgotPassword: React.FC = () => {
       showError(error.data.msg);
     }
   };
-  if (isEmailSent) return <h2>Email Sent</h2>;
+  if (isEmailSent)
+    return (
+      <div className="flex h-full w-full flex-col items-center justify-center">
+        <IoCheckmarkDoneCircleOutline className="animate-pulse text-9xl text-blue-500" />
+        <h1 className="text-2xl text-gray-400">
+          Reset email sent successfuly!
+        </h1>
+      </div>
+    );
   return (
     <div className="flex h-full w-full">
       <div className="hidden w-1/2 flex-col justify-between bg-[#407BE8] px-40 py-20 md:flex">
@@ -64,7 +73,7 @@ const ForgotPassword: React.FC = () => {
 
           {/* </div> */}
           <Button
-            label="Subit"
+            label="Get Reset Link"
             size="sm"
             parentWidth={true}
             isLoading={isLoading}
