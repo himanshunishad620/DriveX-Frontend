@@ -2,7 +2,6 @@ import { createContext, useContext, useEffect, useState } from "react";
 import type { AuthContextType } from "../types/HookProps";
 import type { WrapperProps } from "../types/ComponentsProps";
 import { useVerifyTokenMutation } from "../api/authApi";
-import { useToast } from "../hooks/useToast";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -11,7 +10,6 @@ export const AuthProvider: React.FC<WrapperProps> = ({ children }) => {
   const [userId, setUserId] = useState<string | null>(null);
   const [isAuthenticating, setIsAuthenticating] = useState<boolean>(true);
   const [verifyToken] = useVerifyTokenMutation();
-  const { showError } = useToast();
 
   useEffect(() => {
     async function verify() {
@@ -20,7 +18,6 @@ export const AuthProvider: React.FC<WrapperProps> = ({ children }) => {
         const res = await verifyToken();
         doLogin(res.data.decoded._id);
       } catch (error) {
-        showError("Something Went Wrong!");
       } finally {
         setIsAuthenticating(false);
       }

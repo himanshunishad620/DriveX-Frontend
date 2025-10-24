@@ -7,6 +7,7 @@ import TextInput from "../../components/UI/reusable/TextInput";
 import useFormHook from "../../hooks/useFormHook";
 import { useToast } from "../../hooks/useToast";
 import { useState } from "react";
+import LinkText from "../../components/UI/reusable/LinkText";
 
 const ForgotPassword: React.FC = () => {
   const [isEmailSent, setIsEmailSent] = useState(false);
@@ -53,7 +54,7 @@ const ForgotPassword: React.FC = () => {
       <div className="flex w-full items-center justify-center bg-gray-100 md:w-1/2">
         <form
           onSubmit={handleSumbit}
-          className="shadow-3d flex w-90 flex-col items-center justify-center gap-5 rounded-xl bg-white p-10"
+          className="shadow-3d flex w-90 flex-col items-center justify-center gap-1 rounded-xl bg-white p-10"
         >
           <h1 className="text-2xl font-semibold text-blue-500">
             Forgot Password
@@ -72,6 +73,12 @@ const ForgotPassword: React.FC = () => {
           />
 
           {/* </div> */}
+          <LinkText
+            text="You got your password?"
+            targetPage="../../auth"
+            linkText="Login"
+            align="center"
+          />
           <Button
             label="Get Reset Link"
             size="sm"

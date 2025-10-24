@@ -27,8 +27,8 @@ const Login: React.FC = () => {
         doLogin(result._id);
         navigate("/dashboard", { replace: true });
       }
-    } catch (error) {
-      showError("Something Went Wrong!");
+    } catch (error: any) {
+      showError(error.data.msg);
     }
   };
   return (
