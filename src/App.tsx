@@ -13,39 +13,14 @@ import NotFound from "./components/other/NotFound";
 import { FileUploadProvider } from "./context/FileUploadProvider";
 import { ToastContainer } from "react-toastify";
 import LandingPage from "./pages/LandingPage";
-import { useEffect, useState } from "react";
-import { MdOutlineSignalCellularConnectedNoInternet4Bar } from "react-icons/md";
 import ForgotPassword from "./pages/auth/ForgotPassword";
 import ResetPassword from "./pages/auth/ResetPassword";
+import Offline from "./components/UI/other/Offline";
+import useIsOnline from "./hooks/useIsOnline";
 
 const App: React.FC = () => {
-  const [isOnline, setIsOnline] = useState<boolean>(window.navigator.onLine);
-  useEffect(() => {
-    const handleOnlineToggle = () => {
-      setIsOnline(true);
-    };
-    const handleOfflineToggle = () => {
-      setIsOnline(false);
-    };
-    window.addEventListener("online", handleOnlineToggle);
-    window.addEventListener("offline", handleOfflineToggle);
-    return () => {
-      window.removeEventListener("online", handleOnlineToggle);
-      window.removeEventListener("offline", handleOfflineToggle);
-    };
-  });
-  if (!isOnline)
-    return (
-      <div className="flex h-screen w-full flex-col items-center justify-center">
-        <MdOutlineSignalCellularConnectedNoInternet4Bar className="text-9xl text-gray-500" />
-        <p className="text-center text-2xl font-bold text-gray-500 md:text-3xl">
-          No Internet Connection
-        </p>
-        <p className="mx-3 text-center text-lg font-normal text-gray-500 md:mx-0 md:text-lg">
-          Please make sure that you have stable internet connection
-        </p>
-      </div>
-    );
+  const { isOnline } = useIsOnline();
+  if (!isOnline) return <Offline />;
   return (
     <div className="h-[100dvh] w-screen">
       <Routes>
@@ -60,7 +35,6 @@ const App: React.FC = () => {
             </PrivateRoute>
           }
         >
-          {/* <Route index element={<Home />} /> */}
           <Route index element={<Home />} />
           <Route path="image" element={<Images />} />
           <Route path="media" element={<Media />} />
