@@ -13,8 +13,8 @@ const Login: React.FC = () => {
   const { doLogin } = useAuthContext();
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
-    email: "",
-    password: "",
+    email: "jodaxo1109@obirah.com",
+    password: "jodaxo1109@obirah.com",
   });
   const navigate = useNavigate();
   const { showSuccess, showError } = useToast();
@@ -77,22 +77,12 @@ const Login: React.FC = () => {
             required={true}
             onChange={handleChange}
           />
-          {/* <div className="flex w-full justify-between">
-            <div className="flex items-center gap-1">
-              <input
-                type="checkbox"
-                className="cursor-pointer"
-                onChange={(e) => console.log(e.target.checked)}
-              />
-              <p className="text-[12px] text-gray-500">Remember</p>
-            </div> */}
           <LinkText
             text=""
             targetPage="/auth/forgotPassword"
             align="center"
             linkText="Forgot Password?"
           />
-          {/* </div> */}
           <Button
             label="Login"
             size="sm"

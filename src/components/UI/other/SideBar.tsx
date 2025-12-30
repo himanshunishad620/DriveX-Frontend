@@ -68,7 +68,8 @@ const SideBar: React.FC<Props> = (props) => {
   };
   return (
     <nav
-      className={`fixed top-0 left-0 z-6 block h-full overflow-x-hidden duration-200 ${props.sideBarStyleToggle} bg-white md:relative md:w-1/4`}
+      className={`fixed top-0 z-6 block h-full w-full overflow-x-hidden duration-200 md:left-0 ${props.sideBarStyleToggle} bg-white md:relative md:w-1/4`}
+      // className={`fixed top-0 left-0 z-6 block h-full overflow-x-hidden duration-200 ${props.sideBarStyleToggle} bg-white md:relative md:w-1/4`}
     >
       <div className="absolute top-3.5 right-3.5 block md:hidden">
         <IconButton

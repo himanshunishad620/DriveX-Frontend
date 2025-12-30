@@ -4,9 +4,12 @@ import Header from "../../components/UI/other/Header";
 import { useState } from "react";
 
 const DashboardLayout: React.FC = () => {
-  const [sideBarStyleToggle, setSideBarStyleToggle] = useState<string>("w-0");
+  const [sideBarStyleToggle, setSideBarStyleToggle] =
+    useState<string>("left-[-100%]");
   const handleSideBarStyleToggle = () => {
-    setSideBarStyleToggle((pre) => (pre === "w-0" ? "w-full" : "w-0"));
+    setSideBarStyleToggle((pre) =>
+      pre === "left-[-100%]" ? "left-0" : "left-[-100%]",
+    );
   };
   return (
     <div className="flex h-full">
