@@ -5,16 +5,16 @@ import logo from "../../assets/Logo.svg";
 import Button from "../../components/UI/reusable/Button";
 import LinkText from "../../components/UI/reusable/LinkText";
 import TextInput from "../../components/UI/reusable/TextInput";
-import useFormHook from "../../hooks/useFormHook";
 import { useAuthContext } from "../../context/AuthProvider";
+import useFormHook from "../../hooks/useFormHook";
 import { useToast } from "../../hooks/useToast";
 
 const Login: React.FC = () => {
   const { doLogin } = useAuthContext();
   const [login, { isLoading }] = useLoginMutation();
   const { values, handleChange } = useFormHook({
-    email: "jodaxo1109@obirah.com",
-    password: "jodaxo1109@obirah.com",
+    email: "galij61035@koboywin.com",
+    password: "Himan@123",
   });
   const navigate = useNavigate();
   const { showSuccess, showError } = useToast();
